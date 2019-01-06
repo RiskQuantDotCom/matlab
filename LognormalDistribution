@@ -1,0 +1,29 @@
+#Lognormal Distribution Object Using Specified Parameters
+
+pd = makedist('Lognormal','mu',5,'sigma',2)
+pd = 
+  LognormalDistribution
+
+  Lognormal distribution
+       mu = 5
+    sigma = 2
+   
+#Compute the mean of the lognormal distribution.
+
+mean(pd)
+ans = 1.0966e+03
+
+#The mean of the lognormal distribution is not equal to the mu parameter.
+
+#Generate random numbers from the lognormal distribution and compute their log values.
+
+rng(47);  % for reproducibility
+x = random(pd,10000,1);
+logx = log(x);
+
+#Compute the mean of the log values.
+
+m = mean(logx)
+m = 5.0156
+
+#The mean of the log of x is equal to the mu parameter of x, since x has a lognormal distribution.
